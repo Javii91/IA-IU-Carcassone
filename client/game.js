@@ -464,7 +464,7 @@ Ficha_abajo = function(cx,cy) {
 	if (CurrentMove == 0 && getTurno().id.slice(0,10) == "Jugador_IA" && Meteor.userId() == Jugador1.id) {
 		Meteor.call('JugadorArtificial', idParty, getTurno().id, function (err, data) {
 			console.log(data);
-			var pos = Seguidortraducir(data[5]);
+			var pos = Seguidortraducir(data[6]);
 			
 			setSeguidorType = function () {
 		var color = (function () { 
