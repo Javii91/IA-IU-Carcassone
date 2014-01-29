@@ -11,10 +11,10 @@
 		Tablero.iniciar();
 
 		 Tablero.listaJugadores.push(new ObjetoJugador("kZoW24i2YsmSTXGfk","Paco",23));
-        	Tablero.listaJugadores.push(new ObjetoJugador("kZoW24i2YsmSTXGfk","Pepe",88));
+        	//Tablero.listaJugadores.push(new ObjetoJugador("kZoW24i2YsmSTXGfk","Pepe",88));
         	Tablero.listaJugadores.push(new ObjetoJugador("Jugador_IA1","J_IA",34));
-        	//Tablero.listaJugadores.push(new ObjetoJugador("Jugador_IA2","J_IA2",34));
-        	//Tablero.listaJugadores.push(new ObjetoJugador("Jugador_IA3","J_IA3",34));
+        	Tablero.listaJugadores.push(new ObjetoJugador("Jugador_IA2","J_IA2",34));
+        	Tablero.listaJugadores.push(new ObjetoJugador("Jugador_IA3","J_IA3",34));
         	//Tablero.listaJugadores.push(new ObjetoJugador("mbAAv2Hj6eN2FRZm2","Fulano",17));
         	//Tablero.listaJugadores.push(new ObjetoJugador("mbAAv2Hj6eN2FRZm2","Zutano",12));
 		
@@ -123,17 +123,19 @@
                     nuevoSeguidor = {t:"Monje", n:8, j:Jugador.numero, f:fichaColocada}
                     Tablero.colocaSeguidor(fichaColocada,nuevoSeguidor,Jugador);
                 }
+								
+                else{
                 
-                
-                var n_rand = Math.floor(Math.random() * 3);
-					 if (n_rand ==1){
-                	seguidores=Tablero.colocarseguidor(fichaColocada);
-									var s_rand = Math.floor(Math.random()* seguidores.length-1) //A lo mejor no es -1
-									seguidor = seguidores[s_rand];
-							  	nuevoSeguidor = {t:seguidor.t, n:seguidor.n, j:Jugador.numero, f:fichaColocada}
-									Tablero.colocaSeguidor(fichaColocada,nuevoSeguidor,Jugador);
-console.log("DENTRO DEL IF NUEVO SEGUIDOR--->",nuevoSeguidor);
-					 }
+										 var n_rand = Math.floor(Math.random() * 3);
+										 if (n_rand ==1){
+										      	seguidores=Tablero.colocarseguidor(fichaColocada);
+														var s_rand = Math.floor(Math.random()* seguidores.length-1) //A lo mejor no es -1
+														seguidor = seguidores[s_rand];
+														nuevoSeguidor = {t:seguidor.t, n:seguidor.n, j:Jugador.numero, f:fichaColocada}
+														Tablero.colocaSeguidor(fichaColocada,nuevoSeguidor,Jugador);
+					console.log("DENTRO DEL IF NUEVO SEGUIDOR--->",nuevoSeguidor);
+								 }
+							}
         }
         
         

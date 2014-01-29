@@ -488,7 +488,7 @@ Ficha_abajo = function(cx,cy) {
 		}
 
 			Partidas.update(idParty, {
-                            $push : {movimientos: {jugador: getTurno(), ficha: {x: data[2], y: data[3], sprite: data[0], rotation: data[1]*-90}, seguidor: {fx: data[2]-CurrentScroll.x , fy: data[3] - CurrentScroll.y,t: setSeguidorType() ,sx: pos.x,sy:pos.y}, puntos: data[4]}}
+                            $push : {movimientos: {jugador: getTurno(), ficha: {x: data[2], y: data[3], sprite: data[0], rotation: data[1]*-90}, seguidor: {fx: data[2] , fy: data[3],t: setSeguidorType() ,sx: pos.x,sy:pos.y}, puntos: data[4]}}
                           });
 			} else {
 				Partidas.update(idParty, {
