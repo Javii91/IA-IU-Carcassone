@@ -201,7 +201,7 @@ function SetPlayers (err, data) {
 		
 		if (Partidas.findOne({_id:idParty}).terminada){
 			CurrentMove = 3;
-			Game.setBoard(10, Blank);
+			Juego.setBoard(10, Blank);
 			sonidojuego.pause();
 			alert("Fin de partida.Gracias por Jugar!");
 			return;
@@ -488,7 +488,7 @@ Ficha_abajo = function(cx,cy) {
 		}
 
 			Partidas.update(idParty, {
-                            $push : {movimientos: {jugador: getTurno(), ficha: {x: data[2], y: data[3], sprite: data[0], rotation: data[1]*-90}, seguidor: {fx: data[2] , fy: data[3],t: setSeguidorType() ,sx: pos.x,sy:pos.y}, puntos: data[4]}}
+                            $push : {movimientos: {jugador: getTurno(), ficha: {x: data[2], y: data[3], sprite: data[0], rotation: data[1]*-90}, seguidor: {fx: data[2]-CurrentScroll.x , fy: data[3] - CurrentScroll.y,t: setSeguidorType() ,sx: pos.x,sy:pos.y}, puntos: data[4]}}
                           });
 			} else {
 				Partidas.update(idParty, {
