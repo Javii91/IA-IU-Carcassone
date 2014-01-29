@@ -10,7 +10,7 @@
 	       	Tablero= new ObjTablero(id_partida);
 		Tablero.iniciar();
 
-		 Tablero.listaJugadores.push(new ObjetoJugador("yp52rukxrxQ8DXoNT","Paco",23));
+		 Tablero.listaJugadores.push(new ObjetoJugador("AKD6EA8opsspimWqS","Paco",23));
         	//Tablero.listaJugadores.push(new ObjetoJugador("yp52rukxrxQ8DXoNT","Pepe",88));
         	Tablero.listaJugadores.push(new ObjetoJugador("Jugador_IA1","J_IA",34));
         	Tablero.listaJugadores.push(new ObjetoJugador("Jugador_IA2","J_IA2",34));
