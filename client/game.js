@@ -464,6 +464,9 @@ Ficha_abajo = function(cx,cy) {
 	if (CurrentMove == 0 && getTurno().id.slice(0,10) == "Jugador_IA" && Meteor.userId() == Jugador1.id) {
 		Meteor.call('JugadorArtificial', idParty, getTurno().id, function (err, data) {
 			console.log(data);
+			
+		
+		if (data[5] && data[6]) {
 			var pos = Seguidortraducir(data[6]);
 			
 			setSeguidorType = function () {
@@ -483,14 +486,15 @@ Ficha_abajo = function(cx,cy) {
 				return 'cura_' + color;
 			}
 		}
-		
-	
 
 			Partidas.update(idParty, {
                             $push : {movimientos: {jugador: getTurno(), ficha: {x: data[2], y: data[3], sprite: data[0], rotation: data[1]*-90}, seguidor: {fx: data[2] , fy: data[3],t: setSeguidorType() ,sx: pos.x,sy:pos.y}, puntos: data[4]}}
                           });
-			console.log(data, 'IAAAA');
-		
+			} else {
+				Partidas.update(idParty, {
+                            $push : {movimientos: {jugador: getTurno(), ficha: {x: data[2], y: data[3], sprite: data[0], rotation: data[1]*-90}, seguidor: 0, puntos: data[4]}}
+                          });
+            }
 			
 		}); 
 		CurrentMove = 2;
